@@ -1,5 +1,59 @@
 import UIKit
 
+// Checkpoint 6
+/*
+ create a struct to store information about a car, including its model,
+ number of seats, and current gear, then add a method to change gears up or down
+ */
+
+struct Car {
+    let model: String
+    let numberOfSeats: Int
+    private(set) var gear: Int {
+        didSet {
+            print("Gear was changed from \(oldValue) to \(gear)")
+        }
+    }
+    
+    init(model: String, numberOfSeats: Int) {
+        self.model = model
+        self.numberOfSeats = numberOfSeats
+        print("Your new car is \(model) with \(numberOfSeats) seats.")
+        gear = 0
+    }
+    
+    mutating func gearUp() {
+        if gear >= 0 && gear < 10 {
+            gear += 1
+        } else {
+            showInfoMessage()
+        }
+    }
+    
+    mutating func gearDown() {
+        if gear >= 1 && gear <= 10 {
+            gear -= 1
+        }
+        else {
+            showInfoMessage()
+        }
+    }
+    
+    private func showInfoMessage() {
+        print("Gear can be in range from 0 to 10 only.")
+    }
+    
+}
+
+var newCar = Car(model: "BMW", numberOfSeats: 3)
+for _ in 1...11 {
+    newCar.gearUp()
+}
+
+for _ in 1...11 {
+    newCar.gearDown()
+}
+
 // Checkpoint 5
 
 /*

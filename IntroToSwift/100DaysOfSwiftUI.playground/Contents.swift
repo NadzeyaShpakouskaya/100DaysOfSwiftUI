@@ -1,5 +1,99 @@
 import UIKit
 
+// Checkpoint 7
+
+/*
+ make a class hierarchy for animals, starting with Animal at the top, then Dog and Cat as subclasses, then Corgi and Poodle as subclasses of Dog, and Persian and Lion as subclasses of Cat.
+
+ But there’s more:
+
+ The Animal class should have a legs integer property that tracks how many legs the animal has.
+ The Dog class should have a speak() method that prints a generic dog barking string, but each of the subclasses should print something slightly different.
+ The Cat class should have a matching speak() method, again with each subclass printing something different.
+ The Cat class should have an isTame Boolean property, provided using an initializer.
+ */
+
+class Animal {
+    var legs: Int
+    
+    init(legs: Int) {
+        self.legs = legs
+    }
+}
+
+class Dog: Animal {
+    init() {
+        super.init(legs: 4)
+    }
+    func speak() {
+        print("I'm a dog and I'm barking.")
+    }
+}
+
+class Corgi: Dog {
+    override func speak() {
+        print("Corgi makes Bark-ark-ark!")
+    }
+}
+
+class Poodle: Dog {
+    override func speak() {
+        print("Poodle makes Rrrragh!")
+    }
+}
+
+class Cat: Animal {
+    var isTame: Bool
+    
+    init(isTame: Bool, legs: Int) {
+        self.isTame = isTame
+        super.init(legs: legs)
+    }
+    
+    func speak() {
+        print("Every cat can say meaw.")
+    }
+}
+
+class Persian: Cat {
+    init() {
+         super.init(isTame: true, legs: 4)
+    }
+    
+    override func speak() {
+        print("Persians say Muarh-meaw")
+    }
+}
+
+class Lion: Cat {
+    init() {
+        super.init(isTame: false, legs: 4)
+   }
+    
+    override func speak() {
+        print("Lions make Rrrr-MEAW!")
+    }
+}
+
+let randomDog = Dog()
+randomDog.speak()
+
+let corgi = Corgi()
+corgi.speak()
+
+let poodle = Poodle()
+poodle.speak()
+
+let randomCat = Cat(isTame: true, legs: 4)
+randomCat.speak()
+
+let persian = Persian()
+persian.speak()
+
+let lion = Lion()
+lion.speak()
+
+
 // Checkpoint 6
 /*
  create a struct to store information about a car, including its model,

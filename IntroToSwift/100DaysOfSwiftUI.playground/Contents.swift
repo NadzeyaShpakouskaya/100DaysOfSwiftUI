@@ -1,5 +1,44 @@
 import UIKit
 
+// Checkpoint 8
+
+/*
+ make a protocol that describes a building, adding various properties and methods, then create two structs, House and Office, that conform to it. Your protocol should require the following:
+
+ A property storing how many rooms it has.
+ A property storing the cost as an integer (e.g. 500,000 for a building costing $500,000.)
+ A property storing the name of the estate agent responsible for selling the building.
+ A method for printing the sales summary of the building, describing what it is along with its other properties.
+ */
+
+protocol Building {
+    var rooms: Int { get }
+    var price: Int { get set }
+    func showBuildingInfo()
+}
+
+extension Building {
+    func showBuildingInfo() {
+        print("This building has \(rooms) rooms. The current cost is $\(price). Contact us to get further information.")
+    }
+}
+
+struct House: Building {
+    var rooms: Int = 2
+    var price: Int
+}
+
+struct Office: Building {
+    var rooms: Int
+    var price: Int
+}
+
+let myHouse = House(rooms: 2, price: 150000)
+let myOffice = Office(rooms: 15, price: 2000000)
+
+myHouse.showBuildingInfo()
+myOffice.showBuildingInfo()
+
 // Checkpoint 7
 
 /*

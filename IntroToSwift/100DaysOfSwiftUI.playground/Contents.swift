@@ -1,5 +1,23 @@
 import UIKit
 
+// Checkpoint 9
+/*
+ write a function that accepts an optional array of integers, and returns one randomly. If the array is missing or empty, return a random number in the range 1 through 100.
+ Write function in 1 line
+ */
+
+func randomNumber(from array: [Int]?) -> Int {
+    array?.randomElement() ?? Int.random(in: 1...100)
+}
+
+let firstRandom = randomNumber(from: [1, 72, 34, 48, 156, 121])
+let secondRandom = randomNumber(from: nil)
+let thirdRandom = randomNumber(from: [])
+print("First random number is \(firstRandom).")
+print("Second random number is \(secondRandom).")
+print("Third random number is \(thirdRandom).")
+
+
 // Checkpoint 8
 
 /*

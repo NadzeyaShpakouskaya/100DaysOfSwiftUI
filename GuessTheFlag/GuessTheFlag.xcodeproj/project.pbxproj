@@ -11,6 +11,7 @@
 		FD4F3B1928376646007F1798 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F3B1828376646007F1798 /* ContentView.swift */; };
 		FD4F3B1B2837664A007F1798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD4F3B1A2837664A007F1798 /* Assets.xcassets */; };
 		FD4F3B1E2837664A007F1798 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD4F3B1D2837664A007F1798 /* Preview Assets.xcassets */; };
+		FDBAEFF3283CD9CA0066D7F4 /* TitleViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBAEFF2283CD9CA0066D7F4 /* TitleViewModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		FD4F3B1828376646007F1798 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FD4F3B1A2837664A007F1798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD4F3B1D2837664A007F1798 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FDBAEFF2283CD9CA0066D7F4 /* TitleViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				FD4F3B1628376646007F1798 /* GuessTheFlagApp.swift */,
 				FD4F3B1828376646007F1798 /* ContentView.swift */,
+				FDBAEFF2283CD9CA0066D7F4 /* TitleViewModifiers.swift */,
 				FD4F3B1A2837664A007F1798 /* Assets.xcassets */,
 				FD4F3B1C2837664A007F1798 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				FD4F3B1928376646007F1798 /* ContentView.swift in Sources */,
 				FD4F3B1728376646007F1798 /* GuessTheFlagApp.swift in Sources */,
+				FDBAEFF3283CD9CA0066D7F4 /* TitleViewModifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

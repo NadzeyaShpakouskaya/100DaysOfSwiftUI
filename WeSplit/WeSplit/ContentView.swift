@@ -54,7 +54,12 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    Text(totalWithTips, format: currencyFormat)
+                    HStack{
+                    Text(totalWithTips, format: currencyFormat).foregroundColor(tipPercentage == 0 ? .red : .primary)
+                        Spacer()
+                    Text("Don't be greedy")
+                            .foregroundColor(tipPercentage == 0 ? .red : .clear)
+                    }
                 } header: {
                     Text("Total with tips")
                 }

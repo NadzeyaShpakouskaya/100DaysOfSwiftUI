@@ -87,11 +87,13 @@ struct ContentView: View {
         }
     }
     
+    // increase player score
     private func increaseScore() {
         score += 1
         print("\(round) answer is correct. Your score is \(score)")
     }
     
+    // decrease player score, if it's > 0
     private func decreaseScore() {
         if score > 0 {
             score -= 1
@@ -99,6 +101,8 @@ struct ContentView: View {
         print("\(round) answer is wrong. Your score is \(score)")
     }
     
+    // describe logic when rock button tapped depending on
+    // opponent should win or lose
     private func rockButtonTapped() {
         if opponentChoice == 2 && opponentShouldWon {
             increaseScore()
@@ -110,6 +114,8 @@ struct ContentView: View {
         nextRound()
     }
     
+    // describe logic when scissor button tapped depending on
+    // opponent should win or lose
     private func scissorButtonTapped() {
         if opponentChoice == 0 && opponentShouldWon {
             increaseScore()
@@ -121,6 +127,8 @@ struct ContentView: View {
         nextRound()
     }
     
+    // describe logic when paper button tapped depending on
+    // opponent should win or lose
     private func paperButtonTapped() {
         if opponentChoice == 1 && opponentShouldWon {
             increaseScore()
@@ -132,16 +140,19 @@ struct ContentView: View {
         nextRound()
     }
     
+    // start new round in game
     private func nextRound() {
         if round < 10 {
+            round += 1
             opponentChoice = Int.random(in: 0...2)
-            opponentShouldWon = Bool.random()
+            opponentShouldWon.toggle()
         } else {
             gameIsOver.toggle()
         }
-        round += 1
+
     }
     
+    // restart game
     private func restartGame() {
         score = 0
         round = 0

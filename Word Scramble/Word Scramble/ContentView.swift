@@ -16,13 +16,37 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var score = 0
+    @State private var wordsList = [String]()
+    
     var body: some View {
-        NavigationView {
+        VStack{
+            HStack(spacing: 16
+            ){
+                Spacer()
+                Text(rootWord.uppercased()).font(.largeTitle.bold())
+                Spacer()
+                Button(action: restartGame) {
+                   Image(systemName: "repeat")
+                }
+            }.padding()
+                .foregroundColor(.indigo)
+            
             List {
                 Section {
-                    TextField("Enter your word", text: $newWord)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
+                    VStack {
+                        TextField("Enter your word", text: $newWord)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
+                    }.padding(.top, 20)
+                    
+                } header: {
+                    HStack{
+                        Spacer()
+                    Label("Score: \(score)", systemImage: "line.3.crossed.swirl.circle.fill")
+                            .foregroundColor(.orange)
+                            .font(.largeTitle)
+                    }
                 }
                 
                 Section {
@@ -30,19 +54,27 @@ struct ContentView: View {
                         HStack {
                             Image(systemName: "\(word.count).circle")
                             Text(word)
-                        }
+                            Spacer()
+                            if word.count >= 5 {
+                                Text(" x2 points")
+                            } else if word.count >= 8 {
+                                Text(" x5 points")
+                            }
+                            
+                        }.foregroundColor(word.count >= 5 ? .orange : .indigo)
                     }
                 }
-            }.navigationTitle(rootWord)
-                .onSubmit(addNewWord)
-                .onAppear(perform: startGame)
-                .alert(errorTitle, isPresented: $showingError) {
-                    Button("OK", role: .cancel) {}
-                } message: {
-                    Text(errorMessage)
-                }
+            }
+            .onSubmit(addNewWord)
+            .onAppear(perform: startGame)
+            .alert(errorTitle, isPresented: $showingError) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(errorMessage)
+            }
         }
     }
+    
     
     private func addNewWord() {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
@@ -64,12 +96,23 @@ struct ContentView: View {
             return
         }
         
+        // check length of word
+        guard answer.count >= 3 else {
+            wordError(title: "It's too short", message: "Your word should 3 letters at least.")
+            return
+        }
         
-        guard answer.count > 0 else { return }
+        // check word is not the same as root word
+        guard answer != rootWord else {
+            wordError(title: "It's initial word", message: "You can't use the root word.")
+            return
+        }
+        
         withAnimation {
             usedWords.insert(answer, at: 0)
+            score += calculateScore(for: answer)
         }
-
+        
         
         newWord = ""
     }
@@ -115,7 +158,8 @@ struct ContentView: View {
             // check can read from file
             if let startWords = try? String(contentsOf: startGameFileURL) {
                 let allWords = startWords.components(separatedBy: "\n")
-                rootWord = allWords.randomElement() ?? "silkworm"
+                wordsList = allWords
+                rootWord = wordsList.randomElement() ?? "silkworm"
                 return
             }
         }
@@ -123,7 +167,27 @@ struct ContentView: View {
         fatalError("Couldn't load words file from bundle")
         
     }
- 
+    
+    private func restartGame() {
+        rootWord = wordsList.randomElement() ?? "silkworm"
+        score = 0
+        newWord = ""
+        usedWords = []
+        
+    }
+    
+    private func calculateScore(for word: String) -> Int {
+        var score = word.count
+        
+        if score >= 8 {
+            score *= 5
+        } else if score >= 5 {
+            score *= 2
+        }
+        
+        return score
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

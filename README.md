@@ -11,3 +11,4 @@ Tasks and checkpoints from course [100 Day of Swift UI](https://www.hackingwiths
 5. [BetterRest](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/BetterRest) - _The app suggests time when you should go to sleep for better rest_
 6. [Scramble](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/Word%20Scramble) - _The app provides a word, and player should create as many words as he can from letters from initial word._
 7. [MathTable](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/MathTable) - _It's an educational app for kids to help them practice multiplication tables._
+8. [My Expenses](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/MyExpenses) - _The expenses tracking app_

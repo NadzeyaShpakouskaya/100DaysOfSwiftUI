@@ -17,6 +17,12 @@
 		FD08C86428530CF5007AB554 /* Extension+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08C86328530CF5007AB554 /* Extension+Bundle.swift */; };
 		FD08C86628531002007AB554 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08C86528531002007AB554 /* Mission.swift */; };
 		FD08C868285319B3007AB554 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08C867285319B3007AB554 /* Extension+Color.swift */; };
+		FD08C86A28574903007AB554 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08C86928574903007AB554 /* MissionView.swift */; };
+		FD08C86C285757D9007AB554 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08C86B285757D9007AB554 /* AstronautView.swift */; };
+		FD08C86E285845C3007AB554 /* MissionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08C86D285845C3007AB554 /* MissionRowView.swift */; };
+		FD08C870285846B1007AB554 /* MissionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08C86F285846B1007AB554 /* MissionCardView.swift */; };
+		FD08C87228584764007AB554 /* GridMissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08C87128584764007AB554 /* GridMissionsView.swift */; };
+		FD08C874285847A1007AB554 /* ListMissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08C873285847A1007AB554 /* ListMissionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,12 @@
 		FD08C86328530CF5007AB554 /* Extension+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Bundle.swift"; sourceTree = "<group>"; };
 		FD08C86528531002007AB554 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		FD08C867285319B3007AB554 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		FD08C86928574903007AB554 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		FD08C86B285757D9007AB554 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
+		FD08C86D285845C3007AB554 /* MissionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRowView.swift; sourceTree = "<group>"; };
+		FD08C86F285846B1007AB554 /* MissionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCardView.swift; sourceTree = "<group>"; };
+		FD08C87128584764007AB554 /* GridMissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMissionsView.swift; sourceTree = "<group>"; };
+		FD08C873285847A1007AB554 /* ListMissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMissionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +77,12 @@
 			children = (
 				FD08C84D28530082007AB554 /* MoonshotApp.swift */,
 				FD08C84F28530082007AB554 /* MainView.swift */,
+				FD08C87128584764007AB554 /* GridMissionsView.swift */,
+				FD08C873285847A1007AB554 /* ListMissionsView.swift */,
+				FD08C86F285846B1007AB554 /* MissionCardView.swift */,
+				FD08C86D285845C3007AB554 /* MissionRowView.swift */,
+				FD08C86928574903007AB554 /* MissionView.swift */,
+				FD08C86B285757D9007AB554 /* AstronautView.swift */,
 				FD08C86528531002007AB554 /* Mission.swift */,
 				FD08C86128530C55007AB554 /* Astronaut.swift */,
 				FD08C86328530CF5007AB554 /* Extension+Bundle.swift */,
@@ -157,10 +175,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD08C86E285845C3007AB554 /* MissionRowView.swift in Sources */,
+				FD08C86A28574903007AB554 /* MissionView.swift in Sources */,
 				FD08C86228530C55007AB554 /* Astronaut.swift in Sources */,
+				FD08C87228584764007AB554 /* GridMissionsView.swift in Sources */,
+				FD08C86C285757D9007AB554 /* AstronautView.swift in Sources */,
 				FD08C868285319B3007AB554 /* Extension+Color.swift in Sources */,
 				FD08C85028530082007AB554 /* MainView.swift in Sources */,
 				FD08C84E28530082007AB554 /* MoonshotApp.swift in Sources */,
+				FD08C870285846B1007AB554 /* MissionCardView.swift in Sources */,
+				FD08C874285847A1007AB554 /* ListMissionsView.swift in Sources */,
 				FD08C86628531002007AB554 /* Mission.swift in Sources */,
 				FD08C86428530CF5007AB554 /* Extension+Bundle.swift in Sources */,
 			);

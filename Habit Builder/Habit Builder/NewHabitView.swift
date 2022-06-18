@@ -18,9 +18,7 @@ struct NewHabitView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
-    
-    let types = ["Work", "Health", "Family", "Money", "Other"]
-    
+        
     var body: some View {
         ZStack {
             
@@ -35,14 +33,15 @@ struct NewHabitView: View {
                     }
                     
                     Section{
-                        TextField("Be healthy and more energetic is important for me", text: $description).lineLimit(5)
+                        TextEditor(text: $description)
+                            .frame(height: 100)
                     } header: {
                         Text("Description:")
                     }
                     
                     Section{
                         Picker("Type", selection: $type) {
-                            ForEach(types, id: \.self) {
+                            ForEach(Habit.types, id: \.self) {
                                 Text("\($0)")
                             }
                         }.pickerStyle(.inline)
@@ -79,7 +78,7 @@ struct NewHabitView: View {
         }
         
         guard !description.isEmpty  else {
-            enteredValueError(title: "Empty description", message: "Please enter the detailed description or motivation message")
+            enteredValueError(title: "Empty description", message: "Please add some notes or motivation message")
             return
         }
         

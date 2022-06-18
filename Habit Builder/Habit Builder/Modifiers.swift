@@ -24,8 +24,30 @@ struct CyanButtonModifier: ViewModifier {
     }
 }
 
+struct OrangeButtonModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(.orange)
+            .foregroundColor(.white)
+            .font(.title2.bold().italic())
+            .clipShape(Capsule())
+            .overlay(
+                Capsule()
+                    .stroke(.white, lineWidth: 4)
+            )
+            .shadow(color: .yellow, radius: 4, x: 4, y: 4)
+    }
+}
+
+
+
 extension View {
     func cyanButton() -> some View {
         modifier(CyanButtonModifier())
+    }
+    
+    func orangeButton() -> some View {
+        modifier(OrangeButtonModifier())
     }
 }

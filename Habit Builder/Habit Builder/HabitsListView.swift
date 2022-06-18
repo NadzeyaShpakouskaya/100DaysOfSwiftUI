@@ -8,51 +8,34 @@
 import SwiftUI
 
 struct HabitsListView: View {
-    @StateObject var habitsManager = HabitsManager()
-    @State private var showingAddNewHabit = false
-    
-    @State private var showingGrid = false
+    @ObservedObject var manager: HabitsManager
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(habitsManager.habits, id: \.id) { habit in
-                    Text("\(habit.title)")
-                }.onDelete(perform: removeItems(at:))
-            }
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button {
-                        showingAddNewHabit = true
-                    } label: {
-                        Image(systemName: "plus")
-        
+        List {
+            ForEach(manager.habits, id: \.id) { habit in
+                NavigationLink {
+                    HabitInfoView(manager: manager, habit: habit)
+                } label: {
+                    HStack {
+                        Text("\(habit.title)")
                             .foregroundColor(.cyan)
-                    }
-                    Spacer()}
-                ToolbarItemGroup(placement: .navigationBarLeading) {
-                    Button {
-                        showingGrid.toggle()
-                    } label: {
-                        Image(systemName: showingGrid ? "list.bullet" :  "square.grid.2x2.fill")
-                            .foregroundColor(.cyan)
-                    }
+                        Spacer()
+                        Label("\(habit.daysInRow)", systemImage: "flame")
+                            .foregroundColor(.orange)
+                    } .font(.title2.bold())
                 }
-            }
-            
-            .sheet(isPresented: $showingAddNewHabit) {
-                NewHabitView(manager: habitsManager)
-            }
+            }.onDelete(perform: removeItems(at:))
         }
     }
     
+    
     private func removeItems(at offsets: IndexSet) {
-        habitsManager.habits.remove(atOffsets: offsets)
+        manager.habits.remove(atOffsets: offsets)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HabitsListView()
+        HabitsListView(manager: HabitsManager())
     }
 }

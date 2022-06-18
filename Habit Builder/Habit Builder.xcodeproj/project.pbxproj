@@ -15,6 +15,9 @@
 		FDF40181285CC41300DA1E65 /* HabitsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40180285CC41300DA1E65 /* HabitsManager.swift */; };
 		FDF40183285CC6E300DA1E65 /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40182285CC6E300DA1E65 /* NewHabitView.swift */; };
 		FDF40185285CCD7E00DA1E65 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40184285CCD7E00DA1E65 /* Modifiers.swift */; };
+		FDF40187285D9DC000DA1E65 /* HabitInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40186285D9DBF00DA1E65 /* HabitInfoView.swift */; };
+		FDF40189285DE6CD00DA1E65 /* HabitsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40188285DE6CC00DA1E65 /* HabitsGridView.swift */; };
+		FDF4018B285DE90A00DA1E65 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4018A285DE90A00DA1E65 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		FDF40180285CC41300DA1E65 /* HabitsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsManager.swift; sourceTree = "<group>"; };
 		FDF40182285CC6E300DA1E65 /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
 		FDF40184285CCD7E00DA1E65 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		FDF40186285D9DBF00DA1E65 /* HabitInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitInfoView.swift; sourceTree = "<group>"; };
+		FDF40188285DE6CC00DA1E65 /* HabitsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsGridView.swift; sourceTree = "<group>"; };
+		FDF4018A285DE90A00DA1E65 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +66,13 @@
 			isa = PBXGroup;
 			children = (
 				FDF40170285CC2D600DA1E65 /* Habit_BuilderApp.swift */,
+				FDF4018A285DE90A00DA1E65 /* MainView.swift */,
 				FDF40172285CC2D600DA1E65 /* HabitsListView.swift */,
-				FDF4017E285CC31400DA1E65 /* Habit.swift */,
+				FDF40188285DE6CC00DA1E65 /* HabitsGridView.swift */,
+				FDF40186285D9DBF00DA1E65 /* HabitInfoView.swift */,
 				FDF40182285CC6E300DA1E65 /* NewHabitView.swift */,
 				FDF40180285CC41300DA1E65 /* HabitsManager.swift */,
+				FDF4017E285CC31400DA1E65 /* Habit.swift */,
 				FDF40184285CCD7E00DA1E65 /* Modifiers.swift */,
 				FDF40174285CC2D800DA1E65 /* Assets.xcassets */,
 				FDF40176285CC2D800DA1E65 /* Preview Content */,
@@ -150,8 +159,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDF4017F285CC31400DA1E65 /* Habit.swift in Sources */,
+				FDF4018B285DE90A00DA1E65 /* MainView.swift in Sources */,
 				FDF40173285CC2D600DA1E65 /* HabitsListView.swift in Sources */,
 				FDF40181285CC41300DA1E65 /* HabitsManager.swift in Sources */,
+				FDF40189285DE6CD00DA1E65 /* HabitsGridView.swift in Sources */,
+				FDF40187285D9DC000DA1E65 /* HabitInfoView.swift in Sources */,
 				FDF40183285CC6E300DA1E65 /* NewHabitView.swift in Sources */,
 				FDF40185285CCD7E00DA1E65 /* Modifiers.swift in Sources */,
 				FDF40171285CC2D600DA1E65 /* Habit_BuilderApp.swift in Sources */,

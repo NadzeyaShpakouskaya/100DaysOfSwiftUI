@@ -1,6 +1,9 @@
 ## Habit builder
 
+
 The habit-tracking app, for whome wants to keep track of how much they do certain things.
+This project is a part of [100 Days of SwiftUI course.](https://www.hackingwithswift.com/100/swiftui)
+
 
 ### Features 
  - Add habit and detailed description

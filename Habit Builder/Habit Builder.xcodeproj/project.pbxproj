@@ -1,0 +1,372 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDF40171285CC2D600DA1E65 /* Habit_BuilderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40170285CC2D600DA1E65 /* Habit_BuilderApp.swift */; };
+		FDF40173285CC2D600DA1E65 /* HabitsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40172285CC2D600DA1E65 /* HabitsListView.swift */; };
+		FDF40175285CC2D800DA1E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF40174285CC2D800DA1E65 /* Assets.xcassets */; };
+		FDF40178285CC2D800DA1E65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF40177285CC2D800DA1E65 /* Preview Assets.xcassets */; };
+		FDF4017F285CC31400DA1E65 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4017E285CC31400DA1E65 /* Habit.swift */; };
+		FDF40181285CC41300DA1E65 /* HabitsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40180285CC41300DA1E65 /* HabitsManager.swift */; };
+		FDF40183285CC6E300DA1E65 /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40182285CC6E300DA1E65 /* NewHabitView.swift */; };
+		FDF40185285CCD7E00DA1E65 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40184285CCD7E00DA1E65 /* Modifiers.swift */; };
+		FDF40187285D9DC000DA1E65 /* HabitInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40186285D9DBF00DA1E65 /* HabitInfoView.swift */; };
+		FDF40189285DE6CD00DA1E65 /* HabitsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF40188285DE6CC00DA1E65 /* HabitsGridView.swift */; };
+		FDF4018B285DE90A00DA1E65 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4018A285DE90A00DA1E65 /* MainView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FDF4016D285CC2D600DA1E65 /* Habit Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habit Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF40170285CC2D600DA1E65 /* Habit_BuilderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit_BuilderApp.swift; sourceTree = "<group>"; };
+		FDF40172285CC2D600DA1E65 /* HabitsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsListView.swift; sourceTree = "<group>"; };
+		FDF40174285CC2D800DA1E65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDF40177285CC2D800DA1E65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FDF4017E285CC31400DA1E65 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		FDF40180285CC41300DA1E65 /* HabitsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsManager.swift; sourceTree = "<group>"; };
+		FDF40182285CC6E300DA1E65 /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
+		FDF40184285CCD7E00DA1E65 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		FDF40186285D9DBF00DA1E65 /* HabitInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitInfoView.swift; sourceTree = "<group>"; };
+		FDF40188285DE6CC00DA1E65 /* HabitsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsGridView.swift; sourceTree = "<group>"; };
+		FDF4018A285DE90A00DA1E65 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDF4016A285CC2D600DA1E65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDF40164285CC2D600DA1E65 = {
+			isa = PBXGroup;
+			children = (
+				FDF4016F285CC2D600DA1E65 /* Habit Builder */,
+				FDF4016E285CC2D600DA1E65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDF4016E285CC2D600DA1E65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4016D285CC2D600DA1E65 /* Habit Builder.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDF4016F285CC2D600DA1E65 /* Habit Builder */ = {
+			isa = PBXGroup;
+			children = (
+				FDF40170285CC2D600DA1E65 /* Habit_BuilderApp.swift */,
+				FDF4018A285DE90A00DA1E65 /* MainView.swift */,
+				FDF40172285CC2D600DA1E65 /* HabitsListView.swift */,
+				FDF40188285DE6CC00DA1E65 /* HabitsGridView.swift */,
+				FDF40186285D9DBF00DA1E65 /* HabitInfoView.swift */,
+				FDF40182285CC6E300DA1E65 /* NewHabitView.swift */,
+				FDF40180285CC41300DA1E65 /* HabitsManager.swift */,
+				FDF4017E285CC31400DA1E65 /* Habit.swift */,
+				FDF40184285CCD7E00DA1E65 /* Modifiers.swift */,
+				FDF40174285CC2D800DA1E65 /* Assets.xcassets */,
+				FDF40176285CC2D800DA1E65 /* Preview Content */,
+			);
+			path = "Habit Builder";
+			sourceTree = "<group>";
+		};
+		FDF40176285CC2D800DA1E65 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FDF40177285CC2D800DA1E65 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDF4016C285CC2D600DA1E65 /* Habit Builder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDF4017B285CC2D800DA1E65 /* Build configuration list for PBXNativeTarget "Habit Builder" */;
+			buildPhases = (
+				FDF40169285CC2D600DA1E65 /* Sources */,
+				FDF4016A285CC2D600DA1E65 /* Frameworks */,
+				FDF4016B285CC2D600DA1E65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Habit Builder";
+			productName = "Habit Builder";
+			productReference = FDF4016D285CC2D600DA1E65 /* Habit Builder.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDF40165285CC2D600DA1E65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					FDF4016C285CC2D600DA1E65 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = FDF40168285CC2D600DA1E65 /* Build configuration list for PBXProject "Habit Builder" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDF40164285CC2D600DA1E65;
+			productRefGroup = FDF4016E285CC2D600DA1E65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDF4016C285CC2D600DA1E65 /* Habit Builder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDF4016B285CC2D600DA1E65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF40178285CC2D800DA1E65 /* Preview Assets.xcassets in Resources */,
+				FDF40175285CC2D800DA1E65 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDF40169285CC2D600DA1E65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF4017F285CC31400DA1E65 /* Habit.swift in Sources */,
+				FDF4018B285DE90A00DA1E65 /* MainView.swift in Sources */,
+				FDF40173285CC2D600DA1E65 /* HabitsListView.swift in Sources */,
+				FDF40181285CC41300DA1E65 /* HabitsManager.swift in Sources */,
+				FDF40189285DE6CD00DA1E65 /* HabitsGridView.swift in Sources */,
+				FDF40187285D9DC000DA1E65 /* HabitInfoView.swift in Sources */,
+				FDF40183285CC6E300DA1E65 /* NewHabitView.swift in Sources */,
+				FDF40185285CCD7E00DA1E65 /* Modifiers.swift in Sources */,
+				FDF40171285CC2D600DA1E65 /* Habit_BuilderApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FDF40179285CC2D800DA1E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FDF4017A285CC2D800DA1E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDF4017C285CC2D800DA1E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Habit Builder/Preview Content\"";
+				DEVELOPMENT_TEAM = 93336KV4Q7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nadzeya.shpakouskaya.Habit-Builder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDF4017D285CC2D800DA1E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Habit Builder/Preview Content\"";
+				DEVELOPMENT_TEAM = 93336KV4Q7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nadzeya.shpakouskaya.Habit-Builder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDF40168285CC2D600DA1E65 /* Build configuration list for PBXProject "Habit Builder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF40179285CC2D800DA1E65 /* Debug */,
+				FDF4017A285CC2D800DA1E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDF4017B285CC2D800DA1E65 /* Build configuration list for PBXNativeTarget "Habit Builder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF4017C285CC2D800DA1E65 /* Debug */,
+				FDF4017D285CC2D800DA1E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDF40165285CC2D600DA1E65 /* Project object */;
+}

@@ -13,4 +13,5 @@ Tasks and checkpoints from course [100 Day of Swift UI](https://www.hackingwiths
 7. [MathTable](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/MathTable) - _It's an educational app for kids to help them practice multiplication tables._
 8. [My Expenses](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/MyExpenses) - _The expenses tracking app_
 9. [Moonshot](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/Moonshot) - _The app lets users learn about the missions and astronauts that formed NASA’s Apollo space program The expenses tracking app._
-10. [Habit tacker](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/Habit%20Builder) - _Te app help to build habits_
+10. [Habit tacker](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/Habit%20Builder) - _The app help to build habits_
+11. [Cupcakes corner](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/Cupcake%20corner) - _The prototype app for ordering cupcakes with send request to test server._

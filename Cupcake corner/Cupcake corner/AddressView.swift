@@ -13,10 +13,10 @@ struct AddressView: View {
     var body: some View {
         Form {
             Section {
-                TextField("Name", text: $order.name)
-                TextField("Address", text: $order.address)
-                TextField("City", text: $order.city)
-                TextField("Zip code", text: $order.zipCode)
+                TextField("Name", text: $order.newOrder.name)
+                TextField("Address", text: $order.newOrder.address)
+                TextField("City", text: $order.newOrder.city)
+                TextField("Zip code", text: $order.newOrder.zipCode)
             }
             
             Section {

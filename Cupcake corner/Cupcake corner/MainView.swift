@@ -14,22 +14,22 @@ struct MainView: View {
         NavigationView {
             Form {
                 Section {
-                    Picker("Choose your favorite cupcake", selection: $order.type) {
+                    Picker("Choose your favorite cupcake", selection: $order.newOrder.type) {
                         ForEach(Order.types.indices) {
                             Text(Order.types[$0])
                         }
                     }
-                    Stepper("Number of cupcakes: \(order.quantity)", value: $order.quantity, in: 3...20)
+                    Stepper("Number of cupcakes: \(order.newOrder.quantity)", value: $order.newOrder.quantity, in: 3...20)
                 }
                 
                 Section {
                     // Add animation to show frosting and sprinkles rows
-                    Toggle("Any special requests?", isOn: $order.specialRequestEnabled.animation())
+                    Toggle("Any special requests?", isOn: $order.newOrder.specialRequestEnabled.animation())
                     
                     // show frosting and sprinkles only if special request is toggled
-                    if order.specialRequestEnabled {
-                        Toggle("Add extra frosting", isOn: $order.extraFrosting)
-                        Toggle("Add extra sprinkles", isOn: $order.addSprinkles)
+                    if order.newOrder.specialRequestEnabled {
+                        Toggle("Add extra frosting", isOn: $order.newOrder.extraFrosting)
+                        Toggle("Add extra sprinkles", isOn: $order.newOrder.addSprinkles)
                     }
                 }
                 

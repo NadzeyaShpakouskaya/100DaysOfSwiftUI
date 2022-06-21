@@ -15,6 +15,7 @@
 		FDF401C528607E9300DA1E65 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF401C428607E9300DA1E65 /* Order.swift */; };
 		FDF401C72860839F00DA1E65 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF401C62860839F00DA1E65 /* AddressView.swift */; };
 		FDF401C9286085F700DA1E65 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF401C8286085F700DA1E65 /* CheckoutView.swift */; };
+		FDF401CB2861B9FA00DA1E65 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF401CA2861B9FA00DA1E65 /* OrderModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		FDF401C428607E9300DA1E65 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		FDF401C62860839F00DA1E65 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		FDF401C8286085F700DA1E65 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		FDF401CA2861B9FA00DA1E65 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				FDF401C8286085F700DA1E65 /* CheckoutView.swift */,
 				FDF401C62860839F00DA1E65 /* AddressView.swift */,
 				FDF401C428607E9300DA1E65 /* Order.swift */,
+				FDF401CA2861B9FA00DA1E65 /* OrderModel.swift */,
 				FDF401C028607E3A00DA1E65 /* LearningView.swift */,
 				FDF401B62860577D00DA1E65 /* Assets.xcassets */,
 				FDF401B82860577D00DA1E65 /* Preview Content */,
@@ -152,6 +155,7 @@
 				FDF401B32860577C00DA1E65 /* Cupcake_cornerApp.swift in Sources */,
 				FDF401C328607E7300DA1E65 /* MainView.swift in Sources */,
 				FDF401C9286085F700DA1E65 /* CheckoutView.swift in Sources */,
+				FDF401CB2861B9FA00DA1E65 /* OrderModel.swift in Sources */,
 				FDF401C528607E9300DA1E65 /* Order.swift in Sources */,
 				FDF401C128607E3B00DA1E65 /* LearningView.swift in Sources */,
 				FDF401C72860839F00DA1E65 /* AddressView.swift in Sources */,

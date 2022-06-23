@@ -11,8 +11,8 @@ struct MainView: View {
     // call managedObjectContext that we create on the running our app
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [
-        SortDescriptor(\.rating, order: .reverse),
-        SortDescriptor(\.title)
+        SortDescriptor(\.title),
+        SortDescriptor(\.rating, order: .reverse)
     ]) var books: FetchedResults<Book>
     
     @State private var showingAddScreen = false
@@ -32,7 +32,7 @@ struct MainView: View {
                                     .font(.headline)
                                 Text(book.author ?? "n/a")
                                     .font(.subheadline.italic())
-                            }
+                            }.foregroundColor(book.rating < 2 ? .red : nil)
                         }
                     }
 

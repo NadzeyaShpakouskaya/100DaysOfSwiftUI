@@ -35,12 +35,17 @@ struct DetailView: View {
             Text(book.author ?? "Unknown author")
                 .font(.title)
                 .foregroundColor(.secondary)
+            
+ 
 
             Text(book.review ?? "No review")
                 .padding()
             // we use constant as we want just displaying rating without changing
             RatingView(rating: .constant(Int(book.rating)))
                 .font(.largeTitle)
+            Text(formattedDate(book.date))
+                .bold()
+                .padding()
         }
         .navigationTitle(book.title ?? "Unknown Book")
         .navigationBarTitleDisplayMode(.inline)
@@ -63,9 +68,15 @@ struct DetailView: View {
     
     private func deleteBook() {
         moc.delete(book)
-        
-//        try? moc.save()
+        try? moc.save()
         dismiss()
+    }
+    
+    private func formattedDate(_ date: Date?) -> String {
+        if let date = date {
+            return "Reviewed: \(date.formatted(date: .abbreviated, time: .omitted))"
+        }
+        return "Reviewed: n/a"
     }
     
 }

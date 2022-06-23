@@ -19,6 +19,15 @@ struct AddBookView: View {
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    @State private var showingAlert = false
+    
+    var validToSave: Bool {
+        validate(title) && validate(author) && validate(genre) && validate(review)
+    }
+    
+    
     var body: some View {
         NavigationView {
             Form {
@@ -43,25 +52,62 @@ struct AddBookView: View {
                 
                 Section {
                     Button("Save") {
+                        if validateBook() {
                         saveBook()
                         dismiss()
+                        }
                     }
                 }
                 
             }.navigationTitle("Add book")
+                .alert(alertTitle, isPresented: $showingAlert) {
+                    Button("OK", role: .cancel) {}
+                } message: {
+                    Text(alertMessage)
+                }
         }
     }
     
     private func saveBook() {
         let book = Book(context: moc)
         book.id = UUID()
+        book.date =  Date.now
         book.title = title
         book.author = author
         book.rating = Int16(rating)
         book.genre = genre
         book.review = review
         
+        
+        
         try? moc.save()
+    }
+    
+    private func validate(_ data: String) -> Bool  {
+        !data.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
+    func validateBook() -> Bool {
+        if !validate(title) {
+            showAlert(title: "Title is empty", message: "Please fill the name of book")
+            return false
+        } else if !validate(author) {
+            showAlert(title: "Author is empty", message: "Please fill the author of book")
+            return false
+        } else if !validate(genre) {
+            showAlert(title: "Select genre", message: "Please select the genre of book")
+            return false
+        } else  if !validate(review) {
+            showAlert(title: "Review is empty", message: "Please provide some words about the book")
+            return false
+        }
+        return true
+    }
+    
+    func showAlert(title: String, message: String) {
+        alertTitle = title
+        alertMessage = message
+        showingAlert = true
     }
 }
 

@@ -12,6 +12,7 @@
 		FD32D48A28696F470088A4F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD32D48928696F470088A4F1 /* Preview Assets.xcassets */; };
 		FD32D49128696FE90088A4F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32D49028696FE90088A4F1 /* User.swift */; };
 		FD32D493286971A30088A4F1 /* NetworkDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD32D492286971A30088A4F1 /* NetworkDataManager.swift */; };
+		FDC77934286AEEE000A02155 /* GenericCoreDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC77933286AEEE000A02155 /* GenericCoreDataList.swift */; };
 		FDEC295F2869AE1600C4A6CD /* DetailedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEC295E2869AE1600C4A6CD /* DetailedTabView.swift */; };
 		FDEC29632869D3CB00C4A6CD /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEC29622869D3CB00C4A6CD /* LocalDataManager.swift */; };
 		FDEC29662869D3F600C4A6CD /* MyClients.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDEC29642869D3F600C4A6CD /* MyClients.xcdatamodeld */; };
@@ -30,6 +31,7 @@
 		FD32D48928696F470088A4F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD32D49028696FE90088A4F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FD32D492286971A30088A4F1 /* NetworkDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataManager.swift; sourceTree = "<group>"; };
+		FDC77933286AEEE000A02155 /* GenericCoreDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCoreDataList.swift; sourceTree = "<group>"; };
 		FDEC295E2869AE1600C4A6CD /* DetailedTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTabView.swift; sourceTree = "<group>"; };
 		FDEC29622869D3CB00C4A6CD /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 		FDEC29652869D3F600C4A6CD /* MyClients.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyClients.xcdatamodel; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				FDEC29792869E1E200C4A6CD /* CachedFriend+CoreDataClass.swift */,
 				FDEC297A2869E1E200C4A6CD /* CachedFriend+CoreDataProperties.swift */,
 				FDEC297B2869E1E200C4A6CD /* CachedUser+CoreDataClass.swift */,
+				FDC77933286AEEE000A02155 /* GenericCoreDataList.swift */,
 				FDEC297C2869E1E200C4A6CD /* CachedUser+CoreDataProperties.swift */,
 				FDEC29642869D3F600C4A6CD /* MyClients.xcdatamodeld */,
 				FD32D48628696F470088A4F1 /* Assets.xcassets */,
@@ -172,6 +175,7 @@
 				FDEC29682869D4A500C4A6CD /* DataManager.swift in Sources */,
 				FDEC29802869E1E200C4A6CD /* CachedUser+CoreDataProperties.swift in Sources */,
 				FDEC29662869D3F600C4A6CD /* MyClients.xcdatamodeld in Sources */,
+				FDC77934286AEEE000A02155 /* GenericCoreDataList.swift in Sources */,
 				FDEC29822869ED3A00C4A6CD /* LocalUserListView.swift in Sources */,
 				FD32D48328696F420088A4F1 /* MyClientsApp.swift in Sources */,
 				FD32D493286971A30088A4F1 /* NetworkDataManager.swift in Sources */,

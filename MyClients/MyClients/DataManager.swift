@@ -9,14 +9,11 @@ import CoreData
 import SwiftUI
 
 class DataManager: ObservableObject {
-    let networkManager: NetworkDataManager = NetworkDataManager.shared
-
+    let networkManager: NetworkDataManager  = NetworkDataManager.shared
     @Environment(\.managedObjectContext) var moc
     @Published var dataLoaded = false
-    @Published var dataCached = false
     
     init()  {}
-    
     
     // fetch data from network
     @MainActor  func fetchUserList() async  -> [User] {
@@ -26,12 +23,16 @@ class DataManager: ObservableObject {
         }
         return data
     }
-    
+      
+    // TO DO - Need to fix, can't use this method
+    // get an error -
+    // nilError: The operation couldn’t be completed. (Foundation._GenericObjCError error 0.)
     @MainActor func saveToCoreData() async {
         if !dataLoaded {
             let data = await fetchUserList()
             
             if !data.isEmpty {
+                // transform data to CoreData Entities
                 for user in data {
                     let cachedUser = CachedUser(context: moc)
                     cachedUser.id = user.id
@@ -53,14 +54,16 @@ class DataManager: ObservableObject {
                 }
             }
             if moc.hasChanges {
-                try? moc.save()
+                do {
+                    try moc.save()
+                } catch {
+                    print("\(error): \(error.localizedDescription)")
+                }
                 print("caching ended...")
             }
-        } else {
-            print("no data for caching")
         }
-        dataCached = true
     }
+    
 }
 
 

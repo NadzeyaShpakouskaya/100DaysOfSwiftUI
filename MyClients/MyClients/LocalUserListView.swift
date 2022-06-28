@@ -9,26 +9,54 @@ import SwiftUI
 
 struct LocalUserListView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var users: FetchedResults<CachedUser>
-    @StateObject var dataManager = DataManager()
+    @ObservedObject var dataManager: DataManager
     
     var body: some View {
         NavigationView {
             VStack {
-                Group {
-                    // if data not loaded and cached? show progress view
-                    if !dataManager.dataCached {
-                        ProgressView()
-                    } else {
-                        List {
-                            ForEach(users, id: \.id) { user in
-                                UserRow(user: user)
-                            }
-                        }
+                GenericCoreDataList { (user: CachedUser) in
+                    UserRow(user: user)
+                }
+            }.task {
+                // need to fix - see description in DataManger
+//                await saveToCoreData()
+               await dataManager.saveToCoreData()
+            }.navigationTitle("My clients")
+        }
+    }
+    
+    func saveToCoreData() async {
+        if !dataManager.dataLoaded {
+            let data = await dataManager.fetchUserList()
+            
+            if !data.isEmpty {
+                for user in data {
+                    let cachedUser = CachedUser(context: moc)
+                    cachedUser.id = user.id
+                    cachedUser.name = user.name
+                    cachedUser.address = user.address
+                    cachedUser.registered = user.registered
+                    cachedUser.email = user.email
+                    cachedUser.age = Int16(user.age)
+                    cachedUser.about = user.about
+                    cachedUser.tags = user.tags.joined(separator: ",")
+                    cachedUser.company = user.company
+                    cachedUser.isActive = user.isActive
+                    for friend in user.friends {
+                        let cachedFriend  = CachedFriend(context: moc)
+                        cachedFriend.id = friend.id
+                        cachedFriend.name = friend.name
+                        cachedUser.addToFriends(cachedFriend)
                     }
-                }.task {
-                    await dataManager.saveToCoreData()
-                }.navigationTitle("My clients")
+                }
+            }
+            if moc.hasChanges {
+                do {
+                    try moc.save()
+                } catch {
+                    print("\(error): \(error.localizedDescription)")
+                }
+                print("caching ended...")
             }
         }
     }

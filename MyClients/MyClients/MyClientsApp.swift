@@ -9,11 +9,12 @@ import SwiftUI
 
 @main
 struct MyClientsApp: App {
-    @StateObject private var localDataManager = LocalDataManager()    
+    @StateObject private var localDataManager = LocalDataManager()
+    @StateObject private var dataManager = DataManager()
     
     var body: some Scene {
         WindowGroup {
-            LocalUserListView()
+            LocalUserListView(dataManager: dataManager)
                 .environment(\.managedObjectContext, localDataManager.container.viewContext)
         }
     }

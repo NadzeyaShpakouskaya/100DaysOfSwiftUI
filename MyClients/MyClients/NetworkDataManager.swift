@@ -9,9 +9,8 @@ import Foundation
 import SwiftUI
 
 class NetworkDataManager {
+     static var shared = NetworkDataManager()
     
-    static var shared = NetworkDataManager()
-
     func fetchUserList() async  -> [User] {
         print("start loading data...")
 

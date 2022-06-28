@@ -18,9 +18,10 @@ struct LocalUserListView: View {
                     UserRow(user: user)
                 }
             }.task {
-                // need to fix - see description in DataManger
-//                await saveToCoreData()
-               await dataManager.saveToCoreData()
+
+                await saveToCoreData()
+// need to fix - see description in DataManger
+//               await dataManager.saveToCoreData()
             }.navigationTitle("My clients")
         }
     }

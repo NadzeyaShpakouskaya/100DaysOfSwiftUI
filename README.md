@@ -16,3 +16,4 @@ Tasks and checkpoints from course [100 Day of Swift UI](https://www.hackingwiths
 10. [Habit tacker](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/Habit%20Builder) - _The app help to build habits_
 11. [Cupcakes corner](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/Cupcake%20corner) - _The prototype app for ordering cupcakes with send request to test server._
 12. [Bookworm](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/bookworm/Bookworm) - _The app helps to track which books you’ve read and what you thought of them. Using CoreData to store information._
+13. [My Clients](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/MyClients) - _The contact list app. Data fetched from server and stored locally using CoreData._

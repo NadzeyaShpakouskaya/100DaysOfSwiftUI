@@ -14,7 +14,7 @@ struct MainView: View {
     @State private var filterIntensity = 0.5
     @State private var filterRadius = 0.5
     @State private var filterScale = 0.5
-    
+    @State private var showingAlert = false
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var processedImage: UIImage?
@@ -47,6 +47,9 @@ struct MainView: View {
         }
         .confirmationDialog("Select filter", isPresented: $showingFilterSheet) {
             filterButtonsView
+        }
+        .alert("Your image was saved", isPresented: $showingAlert) {
+            Button("OK", role: .cancel) {}
         }
     }
     
@@ -161,6 +164,7 @@ struct MainView: View {
         
         imageSaver.success = {
             print("Image was saved successfully")
+            showingAlert = true
         }
         
         imageSaver.failed = {

@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct MyClientsApp: App {
-    @StateObject private var localDataManager = LocalDataManager()
+    @StateObject private var localDataManager = LocalDataManager.shared
     @StateObject private var dataManager = DataManager()
     
     var body: some Scene {

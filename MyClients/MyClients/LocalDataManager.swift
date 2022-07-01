@@ -9,6 +9,8 @@ import CoreData
 import SwiftUI
 
 class LocalDataManager: ObservableObject {
+    static let shared = LocalDataManager()
+    
     let container = NSPersistentContainer(name: "MyClients")
 
     init() {
@@ -21,7 +23,7 @@ class LocalDataManager: ObservableObject {
         
     }
     
-    private func saveContext() {
+    func saveContext() {
         if container.viewContext.hasChanges {
             do {
                 try container.viewContext.save()

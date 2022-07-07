@@ -9,17 +9,12 @@ import MapKit
 import SwiftUI
 
 struct MapView: View {
-    @State private var mapRegion = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 50, longitude: 0),
-        span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25)
-    )
-    
-    @State private var locations = [Location]()
-    @State private var selectedPlace: Location?
+    @StateObject private var viewModel = ViewModel()
     
     var body: some View {
+        if viewModel.isUnlocked{
         ZStack {
-            Map(coordinateRegion: $mapRegion, annotationItems: locations) { location in
+            Map(coordinateRegion: $viewModel.mapRegion, annotationItems: viewModel.locations) { location in
                 MapAnnotation(coordinate: location.coordinates) {
                     VStack {
                         Image(systemName: "star.circle")
@@ -31,7 +26,7 @@ struct MapView: View {
                         Text(location.title)
                             .fixedSize()
                     }.onTapGesture {
-                        selectedPlace = location
+                        viewModel.selectedPlace = location
                     }
                 }
             }
@@ -46,14 +41,7 @@ struct MapView: View {
                 HStack {
                     Spacer()
                     Button {
-                        let new = Location(id: UUID(),
-                                           title: "New location",
-                                           description: "",
-                                           latitude: mapRegion.center.latitude,
-                                           longitude: mapRegion.center.longitude)
-                        locations.append(new)
-                        
-                        
+                        viewModel.addNewLocation()
                     } label: {
                         Image(systemName: "plus")
                             .padding()
@@ -66,12 +54,20 @@ struct MapView: View {
                 }
             }
         }
-        .sheet(item: $selectedPlace) { location in
+        .sheet(item: $viewModel.selectedPlace) { location in
             EditLocationView(location: location) { newLocation in
-                if let index = locations.firstIndex(of: location) {
-                    locations[index] = newLocation
-                }
+                viewModel.update(location: newLocation)
             }
+        }
+        } else {
+            // button to unlock using faceID/touchID
+            Button("Unlock Places") {
+                viewModel.authenticate()
+            }
+            .padding()
+            .background(.blue)
+            .foregroundColor(.white)
+            .clipShape(Capsule())
         }
     }
 }

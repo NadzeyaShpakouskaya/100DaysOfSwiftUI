@@ -20,6 +20,10 @@ extension MapView {
         @Published private(set) var locations: [Location]
         @Published var selectedPlace: Location?
         @Published var isUnlocked = false
+        @Published var showingAlert = false
+        
+        let alertTitle = "Authentication failed"
+        let alertMessage = "Please, try one more time."
         
         
         let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedPlaces")
@@ -36,6 +40,9 @@ extension MapView {
         func save() {
             do {
                 let data = try JSONEncoder().encode(locations)
+                
+                // write data with protection
+                // .completeFileProtection - An option to make the file accessible only while the device is unlocked.
                 try data.write(to: savePath, options: [.atomic, .completeFileProtection])
             } catch {
                 print("Unable to save data.")
@@ -79,10 +86,14 @@ extension MapView {
                         }
                     } else {
                         // error
+                        Task { @MainActor in
+                            self.showingAlert = true
+                        }
                     }
                 }
             } else {
                 // no biometrics
+                isUnlocked = true
             }
         }
     }

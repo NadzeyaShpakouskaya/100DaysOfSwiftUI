@@ -57,6 +57,7 @@ struct CheckoutView: View {
             ScrollView{
                 VStack {
                     headerImageView
+                        .accessibilityElement()
                     Text("Order information")
                         .font(.title2.bold().italic())
                     VStack(alignment: .leading){
@@ -112,6 +113,7 @@ struct CheckoutView: View {
             .frame(height: 120)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .overlay(RoundedRectangle(cornerRadius: 20).stroke(.white, lineWidth: 5))
+        
     }
     
     

@@ -33,9 +33,8 @@ struct MainView: View {
                 } label: {
                     Image(systemName: showingGrid ? "list.bullet" :  "square.grid.2x2.fill")
                         .foregroundColor(.white)
-                }
-                
-                
+                        .accessibilityElement()
+                }  
             }
             .navigationTitle("Moonshot")
             .preferredColorScheme(.dark)

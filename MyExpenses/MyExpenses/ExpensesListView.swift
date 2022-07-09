@@ -89,6 +89,9 @@ struct RowView: View {
                 .foregroundColor(item.amount >= boundValues.0 ? item.amount >= boundValues.1 ? colors.0 : colors.1 : colors.2)
                 .font(.headline.italic())
         }
+        .accessibilityElement()
+        .accessibilityLabel("\(item.amount) for \(item.title)")
+        .accessibilityHint("\(item.type)")
     }
 }
 

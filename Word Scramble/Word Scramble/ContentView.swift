@@ -27,7 +27,7 @@ struct ContentView: View {
                 Text(rootWord.uppercased()).font(.largeTitle.bold())
                 Spacer()
                 Button(action: restartGame) {
-                   Image(systemName: "repeat")
+                    Image(systemName: "repeat")
                 }
             }.padding()
                 .foregroundColor(.indigo)
@@ -43,7 +43,7 @@ struct ContentView: View {
                 } header: {
                     HStack{
                         Spacer()
-                    Label("Score: \(score)", systemImage: "line.3.crossed.swirl.circle.fill")
+                        Label("Score: \(score)", systemImage: "line.3.crossed.swirl.circle.fill")
                             .foregroundColor(.orange)
                             .font(.largeTitle)
                     }
@@ -62,6 +62,9 @@ struct ContentView: View {
                             }
                             
                         }.foregroundColor(word.count >= 5 ? .orange : .indigo)
+                            .accessibilityElement()
+                            .accessibilityLabel(word)
+                            .accessibilityHint("\(word.count) letters")
                     }
                 }
             }

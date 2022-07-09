@@ -22,6 +22,7 @@ struct AstronautView: View {
                         .stroke(.lightBackground, lineWidth: 4)
                     )
                 
+                
                 Text(astronaut.description)
             }.padding()
 

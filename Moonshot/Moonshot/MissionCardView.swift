@@ -37,6 +37,9 @@ struct MissionCardView: View {
         .overlay(RoundedRectangle(cornerRadius: 10)
             .stroke(.lightBackground, lineWidth: 4)
         )
+        .accessibilityElement()
+        .accessibilityLabel("\(mission.displayName) \(mission.dateLaunching)")
+        .accessibilityAddTraits(.isButton)
     }
 }
 

@@ -31,6 +31,9 @@ struct MissionRowView: View {
         }
         .padding(.vertical, 8)
         .background(.lightBackground)
+        .accessibilityElement()
+        .accessibilityLabel("\(mission.displayName) \(mission.dateLaunching)")
+        .accessibilityAddTraits(.isButton)
     }
 }
 

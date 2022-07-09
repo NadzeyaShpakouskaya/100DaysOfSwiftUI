@@ -46,6 +46,9 @@ struct MissionView: View {
                                     .foregroundColor(.secondary)
                             }
                         }.padding()
+                            .accessibilityElement()
+                            .accessibilityLabel("\(member.astronaut.name) as \(member.role)")
+                        
                     }
                 }
             }

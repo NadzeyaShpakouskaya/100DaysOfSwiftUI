@@ -11,7 +11,9 @@ import SwiftUI
 extension DetailedMemoryView {
     
     class ViewModel: ObservableObject {
-        private var memory: Memory
+        
+        @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: AppDefaultValue.location.latitude, longitude: AppDefaultValue.location.longitude), span: AppDefaultValue.span)
+        @Published var mapVisible = false
         
         var image: Image {
             guard let imageData = memory.image else {
@@ -36,14 +38,20 @@ extension DetailedMemoryView {
         var description: String {
             memory.description
         }
+        
+        var location: Memory.Location? {
+            memory.location
+        }
+        
+        private var memory: Memory
 
         init(_ memory: Memory) {
             self.memory = memory
-            mapRegion =  MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: memory.location.latitude, longitude: memory.location.longitude), span: AppDefaultValue.span)
+            if let location = location {
+                mapRegion =  MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: AppDefaultValue.span)
+            }
+
         }
-        
-       @Published var mapRegion: MKCoordinateRegion
-        @Published var mapVisible = false
-    
+
     }
 }

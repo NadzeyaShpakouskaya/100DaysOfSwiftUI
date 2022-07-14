@@ -24,6 +24,7 @@ extension MemoriesListView {
         func removeItems(at offsets: IndexSet) {
             guard let index = offsets.first else { return }
             dataManager.deleteMemory(withID: memories[index].id)
+            memories.remove(at: index)
         }
         
         func showAddNewMemory() {
@@ -39,6 +40,11 @@ extension MemoriesListView {
                 return Image(systemName: "photo.artframe")
             }
             return Image(uiImage: uiImage)
+        }
+        
+        func addToList(_ memory: Memory) {
+            memories.append(memory)
+            memories = memories.sorted()
         }
         
     }

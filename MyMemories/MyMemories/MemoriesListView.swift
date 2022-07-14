@@ -17,7 +17,6 @@ struct MemoriesListView: View {
                 
                 ForEach(viewModel.memories, id: \.id) { memory in
                     NavigationLink {
-                        
                         DetailedMemoryView(memory: memory)
                     } label: {
                         HStack {
@@ -40,21 +39,22 @@ struct MemoriesListView: View {
                 
                 
                 
-            }.navigationTitle("My memories")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    Button {
-                        // add new place
-                        viewModel.showAddNewMemory()
-                    } label: {
-                        Image(systemName: "plus.circle")
-                            .foregroundColor(.cyan)
-                    }
-                    
-                }.sheet(isPresented: $viewModel.showingAddMemoryView) {
-                    AddMemoryView(dataManager: dataManager)
+            }
+            .navigationTitle("My memories")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button {
+                    viewModel.showAddNewMemory()
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .foregroundColor(.cyan)
                 }
-                .environmentObject(dataManager)
+            }.sheet(isPresented: $viewModel.showingAddMemoryView) {
+                AddMemoryView(dataManager: dataManager) { memory in
+                    viewModel.addToList(memory)
+                }
+            }
+            .environmentObject(dataManager)
         }
     }
     

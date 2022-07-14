@@ -14,7 +14,7 @@ struct Memory: Codable, Equatable, Comparable {
     var description: String
     let date: Date
     var image: Data?
-    var location: Location
+    var location: Location?
     
     
     

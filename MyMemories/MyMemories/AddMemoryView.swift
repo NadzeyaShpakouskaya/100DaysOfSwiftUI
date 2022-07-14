@@ -10,11 +10,13 @@ import SwiftUI
 struct AddMemoryView: View {
     @ObservedObject var viewModel: ViewModel
     @EnvironmentObject var dataManager: DataManager
-    
     @Environment(\.dismiss) var dismiss
     
-    init(dataManager: DataManager) {
+    var onSave: (Memory) -> Void
+    
+    init(dataManager: DataManager, completion: @escaping (Memory) -> Void) {
         viewModel = ViewModel(dataManager: dataManager)
+        onSave = completion
     }
     
     
@@ -23,36 +25,17 @@ struct AddMemoryView: View {
             ScrollView{
                 imageView
                 VStack(alignment: .leading, spacing: 20) {
-                    
                     TextField("Name", text: $viewModel.name)
                     TextField("Description", text: $viewModel.description)
-                    
-                    
-                    if viewModel.location != nil {
-                        
-                        ZStack{
-                            Map(coordinateRegion: $viewModel.mapRegion)
-                            PinAddingView()
-                        }
-                        .frame(height: 250)
-                        
-                    } else {
-                        
-                        Button {
-                            viewModel.fetchLocation()
-                        } label: {
-                            Text(viewModel.buttonLocationTitle)
-                        }
-                    }
-                    
+                    mapView
                 }.padding()
             }
             Button {
                 viewModel.saveMemory()
+                onSave(viewModel.memory)
                 dismiss()
             } label: {
                 Text("Save my memory")
-                
             }.cyanButton(16)
         }.padding(.vertical)
             .sheet(isPresented: $viewModel.showingImagePicker) {
@@ -67,19 +50,41 @@ struct AddMemoryView: View {
             .environmentObject(dataManager)
     }
     
+    var mapView: some View {
+        VStack{
+            if viewModel.location != nil {
+                ZStack{
+                    Map(coordinateRegion: $viewModel.mapRegion)
+                    PinAddingView()
+                }
+                .frame(height: 250)
+            } else {
+                Button {
+                    viewModel.fetchLocation()
+                } label: {
+                    Text(viewModel.buttonLocationTitle)
+                }
+            }
+        }
+    }
+    
     var imageView: some View {
         VStack {
-            ZStack {
-                Text("Select your picture")
-                    .foregroundColor(viewModel.image == nil ? .gray : .clear)
-                    .font(.title.bold().italic())
-                
-                viewModel.image?
-                    .resizable()
-                    .scaledToFit()
-                    .padding(.horizontal, 4)
-            }        .frame(height: 300)
-            
+            Group{
+                if viewModel.image == nil {
+                    Image(systemName: "photo.artframe")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(20)
+                        .frame(height: 300)
+                } else {
+                    viewModel.image?
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.horizontal, 8)
+                        .frame(height: 300)
+                }
+            }
             VStack {
                 Spacer()
                 HStack{
@@ -96,18 +101,13 @@ struct AddMemoryView: View {
                 
             }
         }
-        
-        
     }
-    
-    
-    
     
 }
 
 struct AddMemoryView_Previews: PreviewProvider {
     static var previews: some View {
-        AddMemoryView(dataManager: DataManager.shared)
+        AddMemoryView(dataManager: DataManager.shared, completion: {_ in})
             .environmentObject(DataManager())
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 class DataManager: ObservableObject {
     static let shared = DataManager()
     
-    @Published var memories: [Memory] = [] {
+    var memories: [Memory] = [] {
         didSet {
             save()
         }
@@ -36,8 +36,6 @@ class DataManager: ObservableObject {
     func save() {
         do {
             let data = try JSONEncoder().encode(memories)
-            // write data with protection
-            // .completeFileProtection - An option to make the file accessible only while the device is unlocked.
             try data.write(to: savePath, options: [.atomic])
         } catch {
             print("Unable to save data.")

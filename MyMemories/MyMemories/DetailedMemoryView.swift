@@ -25,15 +25,17 @@ struct DetailedMemoryView: View {
                 Text("Created on ") + Text(viewModel.date).font(.headline)
             }
             
-            
-            Toggle("Show place", isOn: $viewModel.mapVisible)
-            Spacer()
-            Group {
-                if viewModel.mapVisible {
+            if viewModel.location != nil {
+                Toggle("Show place", isOn: $viewModel.mapVisible)
+                Spacer()
+                Group {
+                    if viewModel.mapVisible {
                         Map(coordinateRegion: $viewModel.mapRegion)
+                    }
+                    
                 }
-                
             }
+            Spacer()
         }
         .padding()
         .navigationTitle(viewModel.name)

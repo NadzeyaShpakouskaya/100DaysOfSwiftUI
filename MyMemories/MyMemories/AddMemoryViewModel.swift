@@ -10,7 +10,7 @@ import SwiftUI
 
 extension AddMemoryView {
     class ViewModel: ObservableObject {
-        private var memory: Memory
+        var memory: Memory
         private var dataManager: DataManager
         private let locationFetcher = LocationFetcher()
         
@@ -26,7 +26,7 @@ extension AddMemoryView {
         
         
         init(dataManager: DataManager) {
-            self.memory = Memory(id: UUID(), name: "", description: "", date: Date.now, location: Memory.Location(latitude: AppDefaultValue.location.latitude, longitude: AppDefaultValue.location.latitude))
+            self.memory = Memory(id: UUID(), name: "", description: "", date: Date.now)
             self.dataManager = dataManager
         }
         
@@ -36,9 +36,9 @@ extension AddMemoryView {
             }
             memory.name = name
             memory.description = description
-
+            if location != nil {
             memory.location = Memory.Location(latitude: mapRegion.center.latitude, longitude: mapRegion.center.longitude)
-           
+            }
             dataManager.addNewMemory(memory)
         }
         
@@ -76,7 +76,6 @@ extension AddMemoryView {
                     return
                 }
             }
-                
             showingImagePicker = true
         }
         

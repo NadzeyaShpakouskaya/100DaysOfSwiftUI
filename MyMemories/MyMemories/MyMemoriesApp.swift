@@ -16,6 +16,10 @@ struct MyMemoriesApp: App {
 //            AddMemoryView(viewModel: .init())
             MemoriesListView(dataManager: dataManager)
                 .environmentObject(dataManager)
+            // switch off warnings in console related to constraints
+                .onAppear {
+                    UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+                }
         }
     }
 }

@@ -10,7 +10,11 @@ import Foundation
 class DataManager: ObservableObject {
     static let shared = DataManager()
     
-    @Published var memories: [Memory] = []
+    @Published var memories: [Memory] = [] {
+        didSet {
+            save()
+        }
+    }
 
     private let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedMemories")
     
@@ -29,17 +33,6 @@ class DataManager: ObservableObject {
         }
     }
 
-    func save(memories: [Memory]) {
-        do {
-            let data = try JSONEncoder().encode(memories)
-            // write data with protection
-            // .completeFileProtection - An option to make the file accessible only while the device is unlocked.
-            try data.write(to: savePath, options: [.atomic])
-        } catch {
-            print("Unable to save data.")
-        }
-    }
-//
     func save() {
         do {
             let data = try JSONEncoder().encode(memories)
@@ -53,10 +46,15 @@ class DataManager: ObservableObject {
     
     
     func addNewMemory(_ memory: Memory) {
-        var tempMemories = loadData()
+        var tempMemories = memories
         tempMemories.append(memory)
         memories = tempMemories
-        save()
-
     }
+    
+    func deleteMemory(withID id: UUID) {
+        if let index = memories.firstIndex(where: {$0.id == id}) {
+            memories.remove(at: index)
+        }
+    }
+
 }

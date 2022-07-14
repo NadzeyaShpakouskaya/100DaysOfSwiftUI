@@ -8,16 +8,17 @@
 import Foundation
 import CoreLocation
 
-struct Memory: Codable, Equatable {
-    let id: UUID
+struct Memory: Codable, Equatable, Comparable {
+    var id: UUID
     var name: String
     var description: String
     let date: Date
     var image: Data?
+    var location: Location
     
     
     
-    struct Location: Codable {
+    struct Location: Codable, Equatable {
         let latitude: Double
         let longitude: Double
         
@@ -32,12 +33,13 @@ struct Memory: Codable, Equatable {
         lhs.name < rhs.name
     }
     
-    static let testMemory = Memory(id: UUID(), name: "My home", description: "this is my own home", date: Date.now,  image: nil)
+    static let testMemory = Memory(
+        id: UUID(),
+        name: "",
+        description: "",
+        date: Date.now,
+        image: nil,
+        location: Location(latitude: 54.12, longitude: -0.124)
+    )
     
-    static let testListOfMemories = [
-        Memory(id: UUID(), name: "My home", description: "this is my own home", date: Date.now),
-        Memory(id: UUID(), name: "My work", description: "this is my work place", date: Date.now),
-        Memory(id: UUID(), name: "My son's school", description: "this is my son's school", date: Date.now)
-    
-    ]
 }

@@ -4,7 +4,7 @@
 //
 //  Created by Nadzeya Shpakouskaya on 11/07/2022.
 //
-
+import MapKit
 import SwiftUI
 
 struct DetailedMemoryView: View {
@@ -12,23 +12,34 @@ struct DetailedMemoryView: View {
     @ObservedObject var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
     
-    
     var body: some View {
         VStack {
-            viewModel.image.resizable().scaledToFit().padding()
-            VStack(alignment: .leading, spacing: 12) {
+            viewModel.image
+                .resizable()
+                .scaledToFit()
+                .padding()
+            VStack{
                 Text(viewModel.description)
-                    .font(.title2).italic()
+                    .font(.title3.italic())
+                Divider()
                 Text("Created on ") + Text(viewModel.date).font(.headline)
             }
-            Spacer()
             
+            
+            Toggle("Show place", isOn: $viewModel.mapVisible)
+            Spacer()
+            Group {
+                if viewModel.mapVisible {
+                        Map(coordinateRegion: $viewModel.mapRegion)
+                }
+                
+            }
         }
         .padding()
         .navigationTitle(viewModel.name)
-            .navigationBarTitleDisplayMode(.inline)
- 
+        .navigationBarTitleDisplayMode(.inline)
     }
+    
     
     init(memory: Memory) {
         self.memory = memory

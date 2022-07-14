@@ -4,7 +4,7 @@
 //
 //  Created by Nadzeya Shpakouskaya on 11/07/2022.
 //
-
+import MapKit
 import SwiftUI
 
 struct AddMemoryView: View {
@@ -17,25 +17,49 @@ struct AddMemoryView: View {
         viewModel = ViewModel(dataManager: dataManager)
     }
     
+    
     var body: some View {
-        VStack {
-            Form {
+        VStack{
+            ScrollView{
                 imageView
-                    .onTapGesture { viewModel.showingImagePicker = true }
-                TextField("Name", text: $viewModel.name)
-                TextField("Description", text: $viewModel.description)
+                VStack(alignment: .leading, spacing: 20) {
+                    
+                    TextField("Name", text: $viewModel.name)
+                    TextField("Description", text: $viewModel.description)
+                    
+                    
+                    if viewModel.location != nil {
+                        
+                        ZStack{
+                            Map(coordinateRegion: $viewModel.mapRegion)
+                            PinAddingView()
+                        }
+                        .frame(height: 250)
+                        
+                    } else {
+                        
+                        Button {
+                            viewModel.fetchLocation()
+                        } label: {
+                            Text(viewModel.buttonLocationTitle)
+                        }
+                    }
+                    
+                }.padding()
             }
-            Spacer()
             Button {
                 viewModel.saveMemory()
                 dismiss()
             } label: {
                 Text("Save my memory")
                 
-            }
-        }.padding(.bottom)
+            }.cyanButton(16)
+        }.padding(.vertical)
             .sheet(isPresented: $viewModel.showingImagePicker) {
-                ImagePicker(image: $viewModel.inputImage)
+                ImagePicker(
+                    sourceType: viewModel.imageSource == .camera ? .camera : .photoLibrary,
+                    image: $viewModel.inputImage
+                )
             }
             .onChange(of: viewModel.inputImage){ _ in
                 viewModel.loadImage()
@@ -44,25 +68,39 @@ struct AddMemoryView: View {
     }
     
     var imageView: some View {
-        ZStack {
-            if viewModel.image == nil {
-            Rectangle()
-                .fill(.gray.opacity(0.25))
+        VStack {
+            ZStack {
+                Text("Select your picture")
+                    .foregroundColor(viewModel.image == nil ? .gray : .clear)
+                    .font(.title.bold().italic())
+                
+                viewModel.image?
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.horizontal, 4)
+            }        .frame(height: 300)
             
-            Text("Tap to select a picture")
-                    .foregroundColor(viewModel.image == nil ? .secondary : .clear)
-                .font(.headline)
+            VStack {
+                Spacer()
+                HStack{
+                    Button("Photo library") {
+                        viewModel.imageSource = .library
+                        viewModel.showPicker()
+                    }.cyanButton(12)
+                    Spacer()
+                    Button("Make new photo") {
+                        viewModel.imageSource = .camera
+                        viewModel.showPicker()
+                    }.cyanButton(12)
+                }.padding(.horizontal)
+                
             }
-            viewModel.image?
-                .resizable()
-                .scaledToFit()
-                .padding(.horizontal, 4)
-            
         }
-        .frame(height: 200)
+        
+        
     }
     
- 
+    
     
     
 }
@@ -70,5 +108,16 @@ struct AddMemoryView: View {
 struct AddMemoryView_Previews: PreviewProvider {
     static var previews: some View {
         AddMemoryView(dataManager: DataManager.shared)
+            .environmentObject(DataManager())
+    }
+}
+
+struct PinAddingView: View {
+    var body: some View {
+        Image(systemName: "mappin")
+            .resizable()
+            .scaledToFit()
+            .foregroundColor(.red)
+            .frame(width: 32, height: 32)
     }
 }

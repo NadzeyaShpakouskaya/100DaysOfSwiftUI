@@ -17,6 +17,7 @@ struct MemoriesListView: View {
                 
                 ForEach(viewModel.memories, id: \.id) { memory in
                     NavigationLink {
+                        
                         DetailedMemoryView(memory: memory)
                     } label: {
                         HStack {

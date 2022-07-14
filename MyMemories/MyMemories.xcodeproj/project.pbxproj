@@ -21,6 +21,9 @@
 		FD4F67A9287C07B800536782 /* AddMemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F67A8287C07B800536782 /* AddMemoryViewModel.swift */; };
 		FD4F67AB287C5C9000536782 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F67AA287C5C9000536782 /* DataManager.swift */; };
 		FD4F67AD287D60D100536782 /* DetailedMemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F67AC287D60D100536782 /* DetailedMemoryViewModel.swift */; };
+		FD4F67AF287DD6DF00536782 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F67AE287DD6DE00536782 /* LocationFetcher.swift */; };
+		FD4F67B1287EAF4100536782 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F67B0287EAF4100536782 /* Utilities.swift */; };
+		FD4F67B3287FE28000536782 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F67B2287FE28000536782 /* Modifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		FD4F67A8287C07B800536782 /* AddMemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoryViewModel.swift; sourceTree = "<group>"; };
 		FD4F67AA287C5C9000536782 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FD4F67AC287D60D100536782 /* DetailedMemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedMemoryViewModel.swift; sourceTree = "<group>"; };
+		FD4F67AE287DD6DE00536782 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		FD4F67B0287EAF4100536782 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		FD4F67B2287FE28000536782 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +85,13 @@
 				FD4F67A0287BF91E00536782 /* MemoriesListView.swift */,
 				FD4F679E287BF90600536782 /* MemoriesModelView.swift */,
 				FD4F67AA287C5C9000536782 /* DataManager.swift */,
+				FD4F67AE287DD6DE00536782 /* LocationFetcher.swift */,
 				FD4F679C287BF80500536782 /* Memory.swift */,
 				FD4F6798287BF78100536782 /* ImagePicker.swift */,
 				FD4F679A287BF7D500536782 /* ImageSaver.swift */,
 				FD4F67A4287BFFC400536782 /* FileManager+Extension.swift */,
+				FD4F67B2287FE28000536782 /* Modifiers.swift */,
+				FD4F67B0287EAF4100536782 /* Utilities.swift */,
 				FD4F678E287BF6D600536782 /* Assets.xcassets */,
 				FD4F6790287BF6D600536782 /* Preview Content */,
 			);
@@ -167,8 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD4F67AF287DD6DF00536782 /* LocationFetcher.swift in Sources */,
 				FD4F67A7287C077400536782 /* AddMemoryView.swift in Sources */,
+				FD4F67B1287EAF4100536782 /* Utilities.swift in Sources */,
 				FD4F67A9287C07B800536782 /* AddMemoryViewModel.swift in Sources */,
+				FD4F67B3287FE28000536782 /* Modifiers.swift in Sources */,
 				FD4F6799287BF78100536782 /* ImagePicker.swift in Sources */,
 				FD4F67A5287BFFC400536782 /* FileManager+Extension.swift in Sources */,
 				FD4F679F287BF90600536782 /* MemoriesModelView.swift in Sources */,
@@ -310,6 +322,8 @@
 				DEVELOPMENT_TEAM = 93336KV4Q7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Would you like to grant access to your camera";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow to track your location for full app functionality";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app needs the access to your photo library to save your awesome memories";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -340,6 +354,8 @@
 				DEVELOPMENT_TEAM = 93336KV4Q7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Would you like to grant access to your camera";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow to track your location for full app functionality";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app needs the access to your photo library to save your awesome memories";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

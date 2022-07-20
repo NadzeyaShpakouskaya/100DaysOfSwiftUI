@@ -11,7 +11,7 @@ import SwiftUI
 struct Hot_ProspectsApp: App {
     var body: some Scene {
         WindowGroup {
-            LearningView()
+            MainTabView()
         }
     }
 }

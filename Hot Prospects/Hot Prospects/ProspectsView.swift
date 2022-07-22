@@ -17,16 +17,24 @@ struct ProspectsView: View {
     
     @EnvironmentObject var prospects: Prospects
     @State private var isShowingScanner = false
+    @State private var showingSorting = false
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(filteredProspects) { prospect in
-                    VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        Text(prospect.emailAddress)
-                            .foregroundColor(.secondary)
+                    HStack {
+                        Image(systemName: prospect.isContacted ? "person.crop.circle.fill.badge.checkmark" : "person.crop.circle.badge.xmark")
+                            .resizable()
+                            .scaledToFill()                            .frame(width: 40, height: 40)
+                            .foregroundColor(prospect.isContacted ? .green : .gray)
+                            .padding(.horizontal, 16)
+                        VStack(alignment: .leading) {
+                            Text(prospect.name)
+                                .font(.headline)
+                            Text(prospect.emailAddress)
+                                .foregroundColor(.secondary)
+                        }
                     }.swipeActions {
                         if prospect.isContacted {
                             Button {
@@ -55,15 +63,81 @@ struct ProspectsView: View {
             }
             .navigationTitle(title)
             .toolbar {
-                Button {
-                    isShowingScanner = true
-                } label: {
-                    Label("Scan", systemImage: "qrcode.viewfinder")
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    Button {
+                        showingSorting = true
+                    } label: {
+                        Image(systemName: "arrow.up.arrow.down")
+                    }
+                    .contextMenu {
+                        sortingButtons
+//                        Button {
+//                            prospects.toggle(.nameAscending)
+//                        } label: {
+//
+//                            Text("By name")
+//
+//                        }
+//
+//                        Button {
+//                            prospects.toggle(.dateDescending)
+//                        } label: {
+//
+//                            Text("By added lately")
+//
+//                        }
+//
+//                        Button {
+//                            prospects.toggle(.dateAscending)
+//                        } label: {
+//
+//                            Text("By added firstly")
+//
+//                        }
+                    }
+                }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {
+                        isShowingScanner = true
+                    } label: {
+                        Label("Scan", systemImage: "qrcode.viewfinder")
+                    }
                 }
             }
             .sheet(isPresented: $isShowingScanner) {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: handleScan)
             }
+            .confirmationDialog("Sorting order", isPresented: $showingSorting) {
+                sortingButtons
+            }
+        }
+    }
+    
+    var sortingButtons: some View {
+        VStack{
+        Button {
+            prospects.toggle(.nameAscending)
+        } label: {
+            
+            Text("By name")
+            
+        }
+        
+        Button {
+            prospects.toggle(.dateDescending)
+        } label: {
+            
+            Text("By added lately")
+            
+        }
+        
+        Button {
+            prospects.toggle(.dateAscending)
+        } label: {
+            
+            Text("By added firstly")
+            
+        }
         }
     }
     
@@ -98,11 +172,11 @@ struct ProspectsView: View {
             var dateComponents = DateComponents()
             dateComponents.hour = 9
             
-//            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            //            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
             
             // Test settings
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-
+            
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)
         }
@@ -124,7 +198,7 @@ struct ProspectsView: View {
     
     func handleScan(result: Result<ScanResult, ScanError>) {
         isShowingScanner = false
-    
+        
         switch result {
         case .success(let data):
             let details = data.string.components(separatedBy: "\n")

@@ -19,31 +19,35 @@ struct MeView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-            Form {
-                TextField("Name", text: $name)
-                    .textContentType(.name)
-                    .font(.title)
-                
-                TextField("Email", text: $emailAddress)
-                    .textContentType(.emailAddress)
-                    .font(.title)
-            }
-                Spacer()
-                Image(uiImage: generateQRCode(from: "\(name)\n\(emailAddress)"))
-                    .resizable()
-                    .interpolation(.none)
-                    .scaledToFit()
-                    .frame(width: 200, height: 200)
-                    .contextMenu {
-                            Button {
-                                let imageSaver = ImageSaver()
-                                imageSaver.writeToPhotoAlbum(image: qrCode)
-                            } label: {
-                                Label("Save to Photos", systemImage: "square.and.arrow.down")
-                            }
+                Form {
+                    TextField("Name", text: $name)
+                        .textContentType(.name)
+                        .font(.title)
+                    
+                    TextField("Email", text: $emailAddress)
+                        .textContentType(.emailAddress)
+                        .font(.title)
+                    VStack {
+                        HStack{
+                            Spacer()
+                            Image(uiImage: generateQRCode(from: "\(name)\n\(emailAddress)"))
+                                .resizable()
+                                .interpolation(.none)
+                                .scaledToFit()
+                                .frame(width: 200, height: 200)
+                                .contextMenu {
+                                    Button {
+                                        let imageSaver = ImageSaver()
+                                        imageSaver.writeToPhotoAlbum(image: qrCode)
+                                    } label: {
+                                        Label("Save to Photos", systemImage: "square.and.arrow.down")
+                                    }
+                                }
+                            Spacer()
                         }
-                Spacer()
-            }.navigationTitle("Your code")
+                    }.padding()
+                }   
+            }.navigationTitle("Generate my code")
                 .onAppear(perform: updateCode)
                 .onChange(of: name) { _ in updateCode() }
                 .onChange(of: emailAddress) { _ in updateCode() }

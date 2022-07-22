@@ -18,6 +18,7 @@
 		FD4F67D828868E0400536782 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F67D728868E0400536782 /* Prospect.swift */; };
 		FD4F67DB2886962B00536782 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = FD4F67DA2886962B00536782 /* CodeScanner */; };
 		FD4F67DD2887EC8A00536782 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F67DC2887EC8A00536782 /* ImageSaver.swift */; };
+		FD4F67DF2889360200536782 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F67DE2889360200536782 /* FileManager+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +31,8 @@
 		FD4F67D328868B6E00536782 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		FD4F67D528868B7700536782 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		FD4F67D728868E0400536782 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
-		FD4F67DC2887EC8A00536782 /* ImageSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSaver.swift; path = "../../Insta Filter/Insta Filter/ImageSaver.swift"; sourceTree = "<group>"; };
+		FD4F67DC2887EC8A00536782 /* ImageSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		FD4F67DE2889360200536782 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				FD4F67DC2887EC8A00536782 /* ImageSaver.swift */,
 				FD4F67D328868B6E00536782 /* ProspectsView.swift */,
 				FD4F67D728868E0400536782 /* Prospect.swift */,
+				FD4F67DE2889360200536782 /* FileManager+Extension.swift */,
 				FD4F67C228814E4600536782 /* LearningView.swift */,
 				FD4F67C428814E4700536782 /* Assets.xcassets */,
 				FD4F67C628814E4700536782 /* Preview Content */,
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD4F67D428868B6E00536782 /* ProspectsView.swift in Sources */,
+				FD4F67DF2889360200536782 /* FileManager+Extension.swift in Sources */,
 				FD4F67D828868E0400536782 /* Prospect.swift in Sources */,
 				FD4F67C328814E4600536782 /* LearningView.swift in Sources */,
 				FD4F67DD2887EC8A00536782 /* ImageSaver.swift in Sources */,

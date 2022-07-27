@@ -11,8 +11,7 @@ import SwiftUI
 struct FlashCardsApp: App {
     var body: some Scene {
         WindowGroup {
-//            BasicTapGestureView()
-            TimerTriggeredView()
+            MainView()
         }
     }
 }

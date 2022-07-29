@@ -21,3 +21,4 @@ Tasks and checkpoints from course [100 Day of Swift UI](https://www.hackingwiths
 15. [Bucket List](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/BucketList/READ#readme) - _App with the list of places on the map that they intend to visit one day_
 16. [My memories](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/MyMemories) - _The app lets the user build a list of his memories by adding photos from library or makung new one using a camera._
 17. [Hot Prospects](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/Hot%20Prospects) - _The app allows to track who you meet at conferences_
+18. [FlashZilla](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/FlashCards) - _The app that helps users learn things using flashcards_

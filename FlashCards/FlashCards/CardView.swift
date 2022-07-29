@@ -10,7 +10,7 @@ import SwiftUI
 struct CardView: View {
     let card: Card
     // use closure to notify parent view that card should be removed
-    var removal: (() -> Void)?
+    var removal: ((Bool) -> Void)?
     
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @Environment(\.accessibilityVoiceOverEnabled) var voiceOverEnabled
@@ -33,7 +33,7 @@ struct CardView: View {
                     differentiateWithoutColor
                     ? nil
                     : RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(offset.width > 0 ? .green : .red)
+                        .fill(setColor(for: offset.width))
                 )
                 .shadow(radius: 10)
             VStack {
@@ -76,8 +76,11 @@ struct CardView: View {
                         // remove if it sets in parent view
                         if offset.width < 0 {
                             feedback.notificationOccurred(.error)
+                            removal?(false)
+                        } else {
+                            removal?(true)
                         }
-                        removal?()
+                       
                     } else {
                         offset = .zero
                     }
@@ -89,6 +92,16 @@ struct CardView: View {
             isShowingAnswer.toggle()
         }
         .animation(.spring(), value: offset)
+    }
+    
+    // to avoid mixing color when offset change from positive to 0 through animation
+    private func setColor(for offset: CGFloat) -> Color {
+        switch offset {
+        case 0: return .white
+        case 0...: return .green
+        case ...0: return .red
+        default: return .white
+        }
     }
 }
 

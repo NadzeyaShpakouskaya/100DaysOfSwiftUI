@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+struct GradientView: View {
+    var body: some View {
+    LinearGradient(
+        colors: [.cyan, .green.opacity(0.35), .cyan],
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    ).ignoresSafeArea()
+    }
+}
+
 struct MainView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @Environment(\.scenePhase) var scenePhase
@@ -16,17 +26,15 @@ struct MainView: View {
     @State private var isActive = true
     @State private var cards = [Card]()
     @State private var showingEditScreen = false
-    
+
+    @EnvironmentObject var dataManager: DataManager
     @State private var timeRemaining = 100
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
+
         ZStack {
-            LinearGradient(
-                colors: [.cyan, .green.opacity(0.35), .cyan],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
+            GradientView()
             
             VStack {
                 Text("Time: \(timeRemaining)")
@@ -38,15 +46,21 @@ struct MainView: View {
                     .clipShape(Capsule())
                 
                 ZStack {
-                    ForEach(0..<cards.count, id:\.self) { index in
-                        CardView(card: cards[index]) {
-                            removeCard(at: index)
+                    ForEach(cards, id: \.id) { card in
+                        if let index = cards.firstIndex(of: card) {
+                            CardView(card: card) { isCorrect in
+                                if isCorrect {
+                                    removeCard(at: index)
+                                } else {
+                                    addWrongAnsweredCardBack(at: index)
+                                }
+                            }
+                            .stacked(at: index, in: cards.count)
+                            // allow to interact only with top card
+                            .allowsHitTesting(index == cards.count - 1)
+                            // stop voiceOver to read all cards in a stack
+                            .accessibilityHidden(index < cards.count - 1)
                         }
-                        .stacked(at: index, in: cards.count)
-                        // allow to interact only with top card
-                        .allowsHitTesting(index == cards.count - 1)
-                        // stop voiceOver to read all cards in a stack
-                        .accessibilityHidden(index < cards.count - 1)
                     }
                 }.allowsHitTesting(timeRemaining > 0)
                 
@@ -95,9 +109,7 @@ struct MainView: View {
                         }
                         .accessibilityLabel("Wrong")
                         .accessibilityHint("Mark your answer as being incorrect.")
-
                         Spacer()
-
                         Button {
                             withAnimation {
                                 removeCard(at: cards.count - 1)
@@ -134,11 +146,13 @@ struct MainView: View {
             }
         }
         .sheet(isPresented: $showingEditScreen, onDismiss: resetCards) {
-            EditsCard()
+            EditsCardView()
         }
         .onAppear(perform: resetCards)
+        .environmentObject(dataManager)
+        
     }
-    
+
     private func removeCard(at index: Int) {
         guard index >= 0 else { return }
         cards.remove(at: index)
@@ -148,6 +162,13 @@ struct MainView: View {
         }
     }
     
+    
+    func addWrongAnsweredCardBack(at index: Int) {
+        let newCard = Card(question: cards[index].question, answer: cards[index].answer, id: UUID())
+        cards.remove(at: index)
+        cards.insert(newCard, at: 0)
+    }
+    
     private func resetCards() {
         timeRemaining = 100
         isActive = true
@@ -155,11 +176,7 @@ struct MainView: View {
     }
     
     func loadData() {
-        if let data = UserDefaults.standard.data(forKey: "Cards") {
-            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
-                cards = decoded
-            }
-        }
+        cards = dataManager.cards
     }
 }
 
@@ -167,5 +184,6 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .previewInterfaceOrientation(.landscapeLeft)
+            .environmentObject(DataManager(UserDefaultsDataManager()))
     }
 }

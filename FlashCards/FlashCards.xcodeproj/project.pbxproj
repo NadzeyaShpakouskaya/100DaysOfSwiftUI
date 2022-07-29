@@ -15,7 +15,8 @@
 		FD4F67FD28910B4600536782 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F67FC28910B4600536782 /* Card.swift */; };
 		FD4F67FF28910C1000536782 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F67FE28910C1000536782 /* CardView.swift */; };
 		FD4F680128910F8100536782 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F680028910F8100536782 /* View+Extension.swift */; };
-		FD4F6803289126E100536782 /* EditsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F6802289126E100536782 /* EditsCard.swift */; };
+		FD4F6803289126E100536782 /* EditsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F6802289126E100536782 /* EditsCardView.swift */; };
+		FD4F68072893A81800536782 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4F68062893A81800536782 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +29,8 @@
 		FD4F67FC28910B4600536782 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		FD4F67FE28910C1000536782 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		FD4F680028910F8100536782 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
-		FD4F6802289126E100536782 /* EditsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditsCard.swift; sourceTree = "<group>"; };
+		FD4F6802289126E100536782 /* EditsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditsCardView.swift; sourceTree = "<group>"; };
+		FD4F68062893A81800536782 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +65,8 @@
 			children = (
 				FD4F67EC288E77CC00536782 /* FlashCardsApp.swift */,
 				FD4F67FC28910B4600536782 /* Card.swift */,
-				FD4F6802289126E100536782 /* EditsCard.swift */,
+				FD4F6802289126E100536782 /* EditsCardView.swift */,
+				FD4F68062893A81800536782 /* DataManager.swift */,
 				FD4F67FE28910C1000536782 /* CardView.swift */,
 				FD4F67FA28910A6800536782 /* MainView.swift */,
 				FD4F680028910F8100536782 /* View+Extension.swift */,
@@ -155,9 +158,10 @@
 				FD4F67EF288E77CC00536782 /* LearningView.swift in Sources */,
 				FD4F67FB28910A6800536782 /* MainView.swift in Sources */,
 				FD4F67ED288E77CC00536782 /* FlashCardsApp.swift in Sources */,
-				FD4F6803289126E100536782 /* EditsCard.swift in Sources */,
+				FD4F6803289126E100536782 /* EditsCardView.swift in Sources */,
 				FD4F67FD28910B4600536782 /* Card.swift in Sources */,
 				FD4F680128910F8100536782 /* View+Extension.swift in Sources */,
+				FD4F68072893A81800536782 /* DataManager.swift in Sources */,
 				FD4F67FF28910C1000536782 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

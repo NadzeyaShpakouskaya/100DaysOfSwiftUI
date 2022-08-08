@@ -78,6 +78,7 @@ struct MainView: View {
                     Spacer()
 
                     Button {
+                        isActive = false
                         showingEditScreen = true
                     } label: {
                         Image(systemName: "plus.circle")

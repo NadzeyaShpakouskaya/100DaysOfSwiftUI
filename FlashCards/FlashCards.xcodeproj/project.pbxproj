@@ -64,11 +64,11 @@
 			isa = PBXGroup;
 			children = (
 				FD4F67EC288E77CC00536782 /* FlashCardsApp.swift */,
-				FD4F67FC28910B4600536782 /* Card.swift */,
+				FD4F67FA28910A6800536782 /* MainView.swift */,
 				FD4F6802289126E100536782 /* EditsCardView.swift */,
 				FD4F68062893A81800536782 /* DataManager.swift */,
 				FD4F67FE28910C1000536782 /* CardView.swift */,
-				FD4F67FA28910A6800536782 /* MainView.swift */,
+				FD4F67FC28910B4600536782 /* Card.swift */,
 				FD4F680028910F8100536782 /* View+Extension.swift */,
 				FD4F67EE288E77CC00536782 /* LearningView.swift */,
 				FD4F67F0288E77CF00536782 /* Assets.xcassets */,

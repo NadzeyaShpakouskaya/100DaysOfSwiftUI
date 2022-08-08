@@ -53,7 +53,7 @@ struct EditsCardView: View {
                 }
                 Section {
                     ForEach(dataManager.cards, id:\.id) { card in
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text(card.question)
                                 .font(.headline)
                             Text(card.answer)

@@ -11,8 +11,7 @@ import SwiftUI
 struct SnowSeekerApp: App {
     var body: some Scene {
         WindowGroup {
-            SheetAlertView()
-//            LearningView()
+            MainView()
         }
     }
 }

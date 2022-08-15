@@ -1,7 +1,7 @@
-## Hot Prospects
+## Snow Seeker
 
 
-The app shows list of ski resorts. Adopted for iPad and big iPhone screens in landscape mode.
+The app shows the list of ski resorts. Adopted for iPad and big iPhone screens in landscape mode.
 This project is a part of [100 Days of SwiftUI course.](https://www.hackingwithswift.com/100/swiftui)
 
 

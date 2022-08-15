@@ -23,3 +23,4 @@ Tasks and checkpoints from course [100 Day of Swift UI](https://www.hackingwiths
 17. [Hot Prospects](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/Hot%20Prospects) - _The app allows to track who you meet at conferences_
 18. [FlashZilla](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/FlashCards) - _The app that helps users learn things using flashcards_
 19. [Roll Dices](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/RollDices) - _The app simultes rolling the dices._
+20. [Snow Seeker](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/SnowSeeker) - _The app with the list of ski resorts._

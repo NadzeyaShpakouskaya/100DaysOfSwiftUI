@@ -2,6 +2,10 @@
 
 Tasks and checkpoints from course [100 Day of Swift UI](https://www.hackingwithswift.com/100/swiftui)
 
+### Certificate
+![certificate_swiftUI](https://user-images.githubusercontent.com/32869814/185576950-83f3b44c-5af6-4e0d-9571-53bb350c8451.jpg)
+
+
 1. [Introduction to Swift](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/blob/main/IntroToSwift/100DaysOfSwiftUI.playground/Contents.swift)
 
 2. [We Split](https://github.com/NadzeyaShpakouskaya/100DaysOfSwiftUI/tree/main/WeSplit) - _The app helps to calculate bill with tips, and amount per person for sharing_
